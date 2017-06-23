@@ -1,0 +1,11 @@
+packetbeat.interfaces.device: any
+
+packetbeat.protocols.http:
+  ports: [8080]
+
+#-------------------------- Elasticsearch output ------------------------------
+output.elasticsearch:
+  hosts: ["localhost:9200"]
+  template.name: "packetbeat"
+  template.path: "packetbeat.template.json"
+  template.overwrite: false
